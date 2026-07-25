@@ -45,9 +45,7 @@ def run() -> int:
             seen_ids = {*seen_ids, item.id}
 
         save_seen_ids(cfg.seen_posts_path, seen_ids)
-        notifier.log(
-            f"Scan complete: {len(media)} media, {new_count} new, {promo_count} promos"
-        )
+
         return 0
     except Exception as exc:
         notifier.log(f"Error in scan: {exc}")
